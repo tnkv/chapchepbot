@@ -6,6 +6,10 @@ def mediweitnuto(message: str) -> str:
     message_builder = []
     for i in range(len(message)):
         if message_lowercase[i] in "о":
+            if randint(0, 100) > 10:
+                message_builder.append(message[i])
+                continue
+
             message_builder.append(
                 "а" if not message[i].isupper() else "А"
             )
